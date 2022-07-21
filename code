@@ -4,8 +4,13 @@ local Window = Library.CreateLib("Moonlighthades open FE", "Synapse")
 --Main
 local Player = Window:NewTab("Player")
 local Speed = Player:NewSection("Speed")
-
+local Jump = Player:NewSection("Jump (w.i.p)")
 --PlayerSpeed
-Speed:NewSlider("Player speed", "Speed up", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+Speed:NewSlider("Player speed", "Speed up", 1000, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+--Playerjump
+Jump:NewSlider("Jump Power", "Jump Higher", 1000, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
